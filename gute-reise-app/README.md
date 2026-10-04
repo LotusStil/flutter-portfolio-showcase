@@ -8,16 +8,28 @@ Advanced navigation app that automatically inserts fuel / charging stops into th
 - Auto-calculates when refuel/charging is needed
 - Automatically inserts best stations into the route
 - Considers price, detour time, and plug compatibility
-- Offline maps and route caching
+
+### Project Structure & Architecture
+**Folder Structure (real):**
+lib/
+/models/ -> Vehicle, Route, Station models
+/services/ -> Routing service, Tank API, Consumption algorithm
+/screens/ -> Main map and route screens
+/helpers/ -> Route calculation helpers
+/widgets/ -> Map widgets, Station markers
+/widgets/navigation/ -> Navigation UI
+/widgets/navigation/sheets/ -> Bottom sheets for station selection
+
+
+**Architecture: Hybrid Offline + Online**
+1. Offline: Maps (OSM tiles) & Routing (GraphHopper) cached locally
+2. Online: Live fuel prices & EV stations fetched via API
+3. Core Logic: Consumption algorithm calculates when to insert stop
+- Complex business logic, not just a map.
 
 ### Tech Stack
-- Flutter / Dart / Isar DB (offline-first)
-- OpenStreetMap + Routing Engine (OSRM / GraphHopper)
-- Tankpreis + EV APIs
-- Complex business logic: consumption algorithm
+- Flutter / Dart / Isar DB (for route cache)
+- OpenStreetMap + GraphHopper
+- Tankerkoenig + OpenChargeMap API
 
-### Key Feature for Clients
-This is NOT a simple map app. This is business logic + navigation + offline-first. 
-Shows ability to build complex, real-world products from scratch.
-
-> Architecture and core algorithm available privately for clients.
+> Full algorithm and architecture available privately for clients (NDA).
