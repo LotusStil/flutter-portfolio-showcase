@@ -37,4 +37,4 @@ widgets.dart -> Shared small widgets
 ### Key Feature for Clients
 Shows I can build a clean, fast MVP with API + Map integration without over-engineering. Perfect for PoC.
 
-> Full code available privately on request.
+> Full source available privately for clients (NDA).
