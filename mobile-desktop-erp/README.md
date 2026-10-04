@@ -65,3 +65,4 @@ class DatabaseService {
   Future<List<Order>> getOrders() => isar.orders.where().findAll();
 }
 
+Full source available privately for clients (NDA).
